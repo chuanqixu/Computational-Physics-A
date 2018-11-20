@@ -5,7 +5,7 @@ import matplotlib
 
 #输入文件想要打印的图片的数据文件信息
 N = 5
-type = 'expo'
+type = 'add'
 filename = "E:\\中科大学习文件\\大三秋季学期\\计算物理\\作业\\12Central_Limit_Theorem\\12Central_Limit_Theorem\\"+type+","+str(N)+".txt"
 
 #读取数据
@@ -35,6 +35,8 @@ elif type == 'norm':
     title = 'Normal Distribution\n'
 elif type == 'expo':
     title = 'Expotential Distribution\n'
+elif type == 'add' :
+    title = 'Normal + Expotential\n'
 plt.suptitle(title + "N=%d" % (N))
 
 #保存图片

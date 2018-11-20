@@ -118,5 +118,24 @@ int main() {
 			}
 			fclose(file);
 		}
+
+		
+
+		//前一半是均匀分布，后一半是指数分布的和函数
+		sprintf(filename, "add,%d.txt", Ns[i]);
+		file = fopen(filename, "w");
+		if (!file)
+			printf("Can't Open File!");
+		else {
+			for (k = 0; k < NUM_16807; k++) { //遍历随机数
+				for (x_now = 0, j = 0; j < Ns[i]; j++) //遍历Xi
+					if (j <= Ns[i] / 2)
+						x_now += 4 * x[j][k];
+					else
+						x_now += -log(1 - x[j][k]);
+				fprintf(file, "%.5f\n", (x_now / Ns[i] - double((Ns[i] + Ns[i] / 2)) / Ns[i]) / (sqrt((double(3 * Ns[i] + Ns[i] / 2)) / (3 * Ns[i] * Ns[i]))  )); //打印到文件中
+			}
+			fclose(file);
+		}
 	}
 }
