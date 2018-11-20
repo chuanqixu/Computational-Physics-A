@@ -22,8 +22,8 @@ ax.scatter(x,y,z,s=0.1)
 ax.set_xlabel("X")
 ax.set_ylabel("Y")
 ax.set_zlabel("Z")
-#plt.xlabel = ("X")
-#plt.ylabel=("Y")
+#plt.xlabel("X")
+#plt.ylabel("Y")
 
 #图片名称
 plt.suptitle("Direct Sampling, Num=%d" % (num))
